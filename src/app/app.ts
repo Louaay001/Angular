@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { EnTete } from './composants/en-tete/en-tete';
 import { Cours, ListeCours } from './composants/liste-cours/liste-cours';
 import { PiedPage } from './composants/pied-page/pied-page';
-import { DetailsCours } from './compsants/details-cours/details-cours';
+import { DetailsCours } from './composants/details-cours/details-cours';
 
 @Component({
   standalone: true,
