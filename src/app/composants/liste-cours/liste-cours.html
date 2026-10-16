@@ -28,7 +28,7 @@
  <article class="carte-cours" [class.actif]="c === coursActif"
 (click)="selectionner(c)">
   <div class="carte-entete">
-   <h3>{{ c.titre }}</h3>
+<h2>{{ c.titre | tronquer:20 }}</h2>
    @switch (c.categorie) {
    @case ('Front-end') { <span class="badge badge--frontend">{{ c.categorie | uppercase }}</span> }
    @case ('Back-end') { <span class="badge badge--backend">{{ c.categorie | uppercase }}</span> }
@@ -38,8 +38,7 @@
   </div>
   <div class="carte-meta">
    <p><span class="meta-label">Durée</span><strong>{{ c.duree }}</strong></p>
-   <p><span class="meta-label">Places disponibles</span><strong>{{ c.places }}</strong></p>
-  </div>
+    <p>{{ c.places | placesRestantes }}</p>  </div>
  </article>
  } @empty {
  <p class="liste-vide">Aucun cours ne correspond à la recherche.</p>
