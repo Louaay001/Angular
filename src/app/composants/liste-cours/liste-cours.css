@@ -2,3 +2,244 @@
     border: 2px solid #dd0031;
     background-color: #fdecef;
 }
+
+.section-cours {
+    min-width: 0;
+}
+
+.entete-section {
+    margin-bottom: 22px;
+}
+
+.surtitre-section {
+    margin: 0 0 7px;
+    color: #5269bd;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.entete-section h2 {
+    margin: 0;
+    color: #182b4d;
+    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+    letter-spacing: -0.035em;
+}
+
+.description-section {
+    margin: 8px 0 0;
+    color: #66758f;
+    font-size: 0.95rem;
+}
+
+.controles {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.champ-recherche,
+.tri-cours {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    border: 1px solid #e0e6f0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgb(27 45 84 / 3%);
+}
+
+.champ-recherche {
+    gap: 11px;
+    padding: 0 14px;
+}
+
+.champ-recherche:focus-within,
+.tri-cours:focus-within {
+    border-color: #7189e9;
+    box-shadow: 0 0 0 3px rgb(82 105 189 / 12%);
+}
+
+.champ-recherche input,
+.tri-cours select {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: #243858;
+    background: transparent;
+}
+
+.champ-recherche input::placeholder {
+    color: #97a3b6;
+}
+
+.icone-recherche {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    border: 2px solid #8795ab;
+    border-radius: 50%;
+}
+
+.icone-recherche::after {
+    position: absolute;
+    right: -5px;
+    bottom: -3px;
+    width: 6px;
+    height: 2px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    background: #8795ab;
+    content: "";
+}
+
+.tri-cours {
+    min-width: 140px;
+    padding: 0 12px;
+}
+
+.tri-cours select {
+    cursor: pointer;
+}
+
+.liste-cours {
+    display: grid;
+    gap: 12px;
+}
+
+.carte-cours {
+    padding: 19px 20px;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgb(27 45 84 / 4%);
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.carte-cours:hover {
+    transform: translateY(-2px);
+    border-color: #c5d0ed;
+    box-shadow: 0 9px 22px rgb(27 45 84 / 9%);
+}
+
+.carte-cours:focus-within {
+    outline: 3px solid rgb(82 105 189 / 20%);
+}
+
+.carte-cours.actif {
+    border-color: #5269bd;
+    background: #f7f8ff;
+    box-shadow: 0 0 0 3px rgb(82 105 189 / 10%);
+}
+
+.carte-entete {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.carte-entete h3 {
+    margin: 0;
+    color: #1b2e50;
+    font-size: 1.03rem;
+    line-height: 1.4;
+}
+
+.badge {
+    display: inline-block;
+    flex: 0 0 auto;
+    padding: 0.3rem 0.62rem;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.045em;
+}
+
+.badge--frontend {
+    color: #155eef;
+    background-color: #eff4ff;
+}
+
+.badge--backend {
+    color: #6938ef;
+    background-color: #f4f3ff;
+}
+
+.badge--langage {
+    color: #027a48;
+    background-color: #ecfdf3;
+}
+
+.badge--autre {
+    color: #344054;
+    background-color: #f2f4f7;
+}
+
+.carte-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 13px;
+    border-top: 1px solid #eef1f6;
+}
+
+.carte-meta p {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+}
+
+.meta-label {
+    color: #8390a5;
+    font-size: 0.72rem;
+}
+
+.carte-meta strong {
+    color: #344563;
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.liste-vide {
+    margin: 0;
+    padding: 28px 20px;
+    border: 1px dashed #cbd4e2;
+    border-radius: 14px;
+    color: #66758f;
+    text-align: center;
+    background: rgb(255 255 255 / 65%);
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+@media (max-width: 520px) {
+    .controles {
+        grid-template-columns: 1fr;
+    }
+
+    .tri-cours {
+        min-width: 0;
+    }
+
+    .carte-cours {
+        padding: 16px;
+    }
+
+    .carte-entete {
+        flex-wrap: wrap;
+    }
+}

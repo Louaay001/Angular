@@ -1,0 +1,59 @@
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 24px 62px;
+    color: #fff;
+    background: linear-gradient(120deg, #182b5c 0%, #3157d5 58%, #5779e8 100%);
+}
+
+header::after {
+    position: absolute;
+    right: max(7%, calc((100vw - 1120px) / 2));
+    bottom: -155px;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgb(255 255 255 / 17%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 36px rgb(255 255 255 / 5%), 0 0 0 72px rgb(255 255 255 / 4%);
+    content: "";
+}
+
+.entete-contenu {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.surtitre {
+    margin: 0 0 12px;
+    color: #c7d4ff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+h1 {
+    max-width: 680px;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+}
+
+.sous-titre {
+    margin: 16px 0 0;
+    color: #e0e7ff;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 40px 20px 44px;
+    }
+
+    .sous-titre {
+        font-size: 0.95rem;
+    }
+}

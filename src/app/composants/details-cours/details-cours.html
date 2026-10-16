@@ -1,15 +1,18 @@
-<p>details-cours works!</p>
-
-@if (cours){
-    <aside class="details-cours">
-        <h2>{{ cours.titre }}</h2>
-        <p>Catégorie : {{ cours.categorie }}</p>
-        <p>Durée : {{ cours.duree }}</p>
-        <p>Places disponibles : {{ cours.places }}</p>
-    </aside>
-} @else {
-    <aside class="details-cours ">
-        <p>Sélectionnez un cours dans la liste pour voir son détail.</p>
-
-    </aside>
-}
+<aside class="details-cours" aria-labelledby="titre-details">
+    <p class="surtitre-details">VOTRE SÉLECTION</p>
+    @if (cours) {
+        <h2 id="titre-details">{{ cours.titre }}</h2>
+        <p class="categorie-details">{{ cours.categorie }}</p>
+        <div class="details-infos">
+            <p><span>Durée</span><strong>{{ cours.duree }}</strong></p>
+            <p><span>Places disponibles</span><strong>{{ cours.places }}</strong></p>
+        </div>
+        <p class="conseil-details">Un bon choix pour continuer à développer vos compétences.</p>
+    } @else {
+        <div class="details-vide">
+            <span class="icone-details" aria-hidden="true">✦</span>
+            <h2 id="titre-details">À vous de choisir</h2>
+            <p>Sélectionnez un cours dans la liste pour afficher ses détails ici.</p>
+        </div>
+    }
+</aside>

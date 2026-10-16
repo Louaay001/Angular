@@ -1,4 +1,14 @@
 <app-en-tete></app-en-tete>
-<app-liste-cours (coursSelectionne)="onSelectionCours($event)"></app-liste-cours>
-<app-details-cours [cours]="coursSelectionne"></app-details-cours>
-<app-pied-page></app-pied-page>
+<main class="contenu-principal">
+ <div class="grille-contenu">
+  <app-liste-cours (coursSelectionne)="onSelectionCours($event)"></app-liste-cours>
+  <app-details-cours [cours]="coursSelectionne"></app-details-cours>
+ </div>
+</main>
+@defer (on viewport) {
+ <app-pied-page></app-pied-page>
+} @placeholder {
+ <div class="pied-page-placeholder">...</div>
+} @loading {
+ <p>Chargement...</p>
+}
