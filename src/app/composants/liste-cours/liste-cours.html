@@ -24,9 +24,8 @@
  </div>
 
  <div class="liste-cours">
- @for (c of cours | filtreCours:recherche | triCours:tri; track c.titre) {
- <article class="carte-cours" [class.actif]="c === coursActif"
-(click)="selectionner(c)">
+ @for (c of cours | filtreCours:recherche | triCours:tri; track c.id) {
+ <article class="carte-cours">
   <div class="carte-entete">
 <h2>{{ c.titre | tronquer:20 }}</h2>
    @switch (c.categorie) {
@@ -39,6 +38,7 @@
   <div class="carte-meta">
    <p><span class="meta-label">Durée</span><strong>{{ c.duree }}</strong></p>
     <p>{{ c.places | placesRestantes }}</p>  </div>
+  <a [routerLink]="['/cours', c.id]">Voir le détail</a>
  </article>
  } @empty {
  <p class="liste-vide">Aucun cours ne correspond à la recherche.</p>

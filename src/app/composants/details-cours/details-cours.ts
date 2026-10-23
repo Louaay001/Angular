@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Cours } from '../../composants/liste-cours/liste-cours';
+import { Cours } from '../../donnees/cours';
 
 @Component({
   standalone: true,
