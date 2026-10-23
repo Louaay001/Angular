@@ -12,7 +12,22 @@
   border-radius: 6px;
 }
 
+.menu button {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
 .menu a:hover {
+  background: #262640;
+}
+
+.menu button:hover {
   background: #262640;
 }
 

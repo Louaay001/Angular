@@ -1,1 +1,6 @@
-<p>connexion works!</p>
+<h1>Connexion</h1>
+<form (ngSubmit)="seConnecter()">
+  <label for="nom">Nom</label>
+  <input id="nom" name="nom" [(ngModel)]="nom" required>
+  <button type="submit">Se connecter</button>
+</form>

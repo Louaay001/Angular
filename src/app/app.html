@@ -4,7 +4,11 @@
 true }">Accueil</a>
  <a routerLink="/cours" routerLinkActive="actif">Catalogue</a>
  <a routerLink="/mes-inscriptions" routerLinkActive="actif">Mes inscriptions</a>
- <a routerLink="/connexion" routerLinkActive="actif">Connexion</a>
+ @if (session.connecte()) {
+  <button type="button" (click)="deconnecter()">Déconnexion ({{ session.nom() }})</button>
+ } @else {
+  <a routerLink="/connexion" routerLinkActive="actif">Connexion</a>
+ }
 </nav>
 <main>
  <router-outlet />
