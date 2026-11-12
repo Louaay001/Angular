@@ -1,18 +1,19 @@
 import { Component, Input, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { Session } from '../../services/session';
 
 @Component({
-  imports: [FormsModule],
   selector: 'app-connexion',
-  styleUrl: './connexion.css',
+  imports: [FormsModule],
   templateUrl: './connexion.html',
+  styleUrl: './connexion.css',
 })
 export class Connexion {
   private session = inject(Session);
   private router = inject(Router);
 
+  // Reçoit le paramètre ?retour=... de l'URL (renseigné par le guard, étape 9)
   @Input() retour = '';
   nom = '';
 

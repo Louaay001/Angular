@@ -13,6 +13,12 @@ export const routes: Routes = [
   { path: 'cours', component: ListeCoursComponent, title: 'Catalogue' },
   { path: 'cours/:id', component: PageDetail, title: 'Détail du cours' },
   {
+    path: 'cours/:id/inscription',
+    component: Inscription,
+    canActivate: [authGuard],
+    title: 'Inscription',
+  },
+  {
     path: 'mes-inscriptions',
     loadComponent: () =>
       import('./pages/mes-inscriptions/mes-inscriptions').then((m) => m.MesInscriptions),
@@ -21,11 +27,4 @@ export const routes: Routes = [
   },
   { path: 'connexion', component: Connexion, title: 'Connexion' },
   { path: '**', component: Introuvable, title: 'Page introuvable' },
-  {
-    path: 'cours/:id/inscription',
-    component: Inscription,
-    canActivate: [authGuard],
-    title: 'Inscription',
- },
-
 ];
